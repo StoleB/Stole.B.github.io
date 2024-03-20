@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+  }
+
+.container {
+    background-image: linear-gradient(rgba(0, 0, 255, 0.384),rgba(255, 255, 0, 0.466));
+    max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 15px;
+      padding-right: 15px;
+}
+
+p {
+    text-align: center;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    font-weight: 700;
+}
