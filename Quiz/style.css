@@ -1,0 +1,60 @@
+html {
+    display: flex;
+    justify-content: center;
+
+}
+
+body {
+    margin-top: 100px;
+    border-style: solid;
+    border-radius: 2%;
+}
+
+.box {
+    background-image: linear-gradient(green,rgb(0, 255, 221));
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 800px;
+    height: 300px;
+
+}
+    
+h1 {
+    margin-top: 0px;
+    color: rgb(22, 185, 235);
+    text-decoration: ;
+}
+
+.question {
+    color: rgb(22, 185, 235);
+    font-size: 40px;
+    font-weight: 700;
+}
+
+button {
+    color: rgb(46, 9, 255);
+    background-image: linear-gradient(to right, rgb(255, 160, 82),rgb(255, 81, 81));
+    width: 250px;
+    height: 100px;
+    font-size: large;
+    font-weight:700;
+    margin: 5px;
+    border-radius: 5%;
+}
+
+.buttons {
+display: flex;
+flex-direction: row;
+justify-content: center;
+margin-top: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
