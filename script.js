@@ -1,7 +1,8 @@
- const image = [
-     'images'
- ];
-//_________________________Option 1____________________________
+const image = [
+    'images/Quiz.png',
+    'images/To-do.png',
+    'images/Memory.png'
+];
 
 let count = 0;
 function cycleImages(){
@@ -12,8 +13,4 @@ function cycleImages(){
     if (count >= image.length) {
         count =0;
     }
-};
-
-window.onload = function() {
-    cycleImages();
-};
+}
