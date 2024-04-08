@@ -1,0 +1,121 @@
+body {
+    margin: auto;
+    max-width: 1200px;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);;
+    grid-gap: 1px;
+    max-width: 910px;
+    max-height: 760px;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 5px;
+    background-image: linear-gradient(rgba(140, 141, 151, 0.658), rgba(47, 37, 102, 0.767));
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius:5px;
+  
+  }
+  .memory-game {
+    perspective: 1000px;
+    width: 140px;
+    padding: 5px;
+  }
+  
+  .card {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    transform-origin: center;
+  }
+  
+  
+  
+  .card .front-face, 
+  .card .back-face {
+    position: absolute;
+    width: 100%;
+    height: 180px;
+    backface-visibility: hidden;
+    border: #353434;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+  }
+  
+  
+  .card .front-face {
+    background-color: #353434;
+    color:white;
+    transform: rotateY(0deg);
+  }
+  
+  .card .back-face {
+    background-color: #ebeff1;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  
+  .Reset {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+  
+  }
+  #reset-btn {
+    height: 30px;
+    width: 150px;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(1, 116, 223, 0.822);
+    font-style: italic;
+    background-image: linear-gradient(rgb(221, 212, 212), rgb(117, 117, 116));
+    border-radius: 5px;
+    border-color: rgba(1, 116, 223, 0.822);
+  }
+  
+  .Statistics {
+    max-width: 910px;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    background-image: linear-gradient(rgba(47, 37, 102, 0.767), rgba(140, 141, 151, 0.658));
+    border-top-right-radius:5px;
+    border-top-left-radius:5px;
+    margin: auto;
+    
+  }
+  
+  .Moves {
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 5px;
+    margin: 20px;
+    max-width: 100px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 10px;
+    background-image: linear-gradient(rgb(221, 212, 212), rgb(117, 117, 116));
+    color: rgba(1, 116, 223, 0.822);
+    font-style: italic;
+  }
+  
+  .Timer {
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 5px;
+    margin: 20px;
+    max-width: 100px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 10px;
+    background-image: linear-gradient(rgb(221, 212, 212), rgb(117, 117, 116));
+    color: rgba(1, 116, 223, 0.822);
+    font-style: italic;
+  }
+  
+  
