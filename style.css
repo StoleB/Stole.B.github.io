@@ -11,14 +11,15 @@
     height: auto;
     z-index: -1;
     opacity: 0.6;
+    object-fit: cover;
 }
 
 .container {
     position: relative;
-    display: grid;
-    max-width: 1700px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 15px;
+    box-sizing: border-box;
 }
 
 
@@ -92,13 +93,65 @@ p {
 /* Media queries for mobile screens */
 @media only screen and (max-width: 768px) {
     .container {
-        padding: 10px;
+        width: 768px;
+        margin: auto;
+
     }
-    .projects {
-        margin-right: 20px;
+
+    h1 {
+        text-align: center;
+        font-size: 10px;
     }
+    
     p {
-        width: auto;
-        max-width: 100%;
+        border-left: 2px solid;
+        height: 50px;
+        border-top: 2px solid rgb(17, 19, 17);
+        width: 50px;
+        border-radius: 5px;
+        padding-top: 20px;
+        padding-left: 20px;
+        max-width: 650px;;
+    }
+
+    h3 {
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+
+    .projects {
+        width: 30px;
+        height: 50px;
+        font-size: 7px;
+        border-left: 1px solid rgb(17, 19, 17);
+        border-top: 1px solid rgb(17, 19, 17);
+        margin-bottom: 50px;
+        margin-right: 0px;
+        margin-left: 200px;
+        padding: 5px;
+    }
+
+    .links {
+        width: 50px;
+        max-height: 10px;
+        font-size: 7px;
+    }
+
+    .preview {
+        display: flex;
+        border-radius: 5px;
+        width: 200px;
+        margin: 0;
+    }
+
+    #image {
+        max-width: 30%;
+        max-height: 30%;
+    }
+    .btn {
+        width: 30px;
+        height: 10px;
+        font-size: 7px;
+        margin: 2px;
     }
 }
