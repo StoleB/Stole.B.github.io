@@ -96,7 +96,7 @@ body {
 }
 @media only screen and (max-width: 1024px) {
   .container {
-    grid-template-columns: repeat(12, minmax(70px, 1fr));
+    grid-template-columns: repeat(8, minmax(100px, 1fr));
   }
 
   .Statistics {
@@ -104,20 +104,20 @@ body {
   }
 
   .card {
-    height: 70px;
-    width: 60px;
+    height: 110px;
+    width: 90px;
 
   }
 
   .card .front-face,
   .card .back-face {
-    height: 70px;
-    width: 60px;
+    height: 110px;
+    width: 90px;
   }
 
   .Moves,
   .Timer {
-    font-size: 10px;
+    font-size: 20px;
   }
 }
 
