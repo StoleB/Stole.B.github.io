@@ -80,78 +80,80 @@ p {
     background-image: linear-gradient(rgba(103, 103, 255, 0.801),rgba(38, 58, 97, 0.459));
 }
 
+/* Media queries for larger screens (e.g., desktops) */
+@media only screen and (min-width: 1201px) {
+    .container {
+        /* Adjust container width for larger screens */
+        width: 1200px;
+    }
+
+    /* Adjust other styles as needed for larger screens */
+}
+
 /* Media queries for tablet screens */
 @media only screen and (max-width: 1024px) {
     .container {
+        /* Adjust container width for tablets */
         max-width: 90%;
     }
     .projects {
+        /* Adjust projects margin for tablets */
         margin-right: 50px;
     }
+
+    /* Adjust other styles as needed for tablets */
 }
 
 /* Media queries for mobile screens */
 @media only screen and (max-width: 768px) {
     .container {
-        width: 768px;
+        /* Adjust container width for mobile devices */
+        width: 90%;
         margin: auto;
-
     }
 
     h1 {
-        text-align: center;
-        font-size: 10px;
-    }
-    
-    p {
-        border-left: 2px solid;
-        height: 50px;
-        border-top: 2px solid rgb(17, 19, 17);
-        width: 50px;
-        border-radius: 5px;
-        padding-top: 20px;
-        padding-left: 20px;
-        max-width: 650px;;
+        /* Adjust heading font size for mobile */
+        font-size: 18px;
     }
 
-    h3 {
-        margin-top: 3px;
-        margin-bottom: 3px;
+    p {
+        /* Adjust paragraph styles for mobile */
+        border-left: 4px solid;
+        height: auto;
+        width: 90%;
+        max-width: 90%;
     }
 
     .projects {
-        width: 30px;
-        height: 50px;
-        font-size: 7px;
-        border-left: 1px solid rgb(17, 19, 17);
-        border-top: 1px solid rgb(17, 19, 17);
-        margin-bottom: 50px;
-        margin-right: 0px;
-        margin-left: 200px;
-        padding: 5px;
+        /* Adjust projects styles for mobile */
+        width: 100%;
+        height: auto;
+        font-size: 14px;
+        margin-bottom: 20px;
+        margin-left: 0;
+        padding: 10px;
     }
 
     .links {
-        width: 50px;
-        max-height: 10px;
-        font-size: 7px;
+        /* Adjust links styles for mobile */
+        font-size: 12px;
     }
 
     .preview {
-        display: flex;
-        border-radius: 5px;
-        width: 200px;
-        margin: 0;
+        /* Adjust preview styles for mobile */
+        max-width: 90%;
     }
 
     #image {
-        max-width: 30%;
-        max-height: 30%;
+        /* Adjust image styles for mobile */
+        max-width: 100%;
+        max-height: auto;
     }
+
     .btn {
-        width: 30px;
-        height: 10px;
-        font-size: 7px;
-        margin: 2px;
+        /* Adjust button styles for mobile */
+        width: 90%;
+        font-size: 14px;
     }
 }

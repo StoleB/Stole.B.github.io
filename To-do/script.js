@@ -1,86 +1,105 @@
-const localTaskName = localStorage.getItem('taskName');
-
-let taskName = JSON.parse(localTaskName) || [];
-
-const category = document.getElementById('category')
+const localTasks = localStorage.getItem('tasks');
+let tasks = JSON.parse(localTasks) || [];
 
 function addTask() {
     const input = document.getElementById('input');
-    const taskName = input.value;
+    const taskName = input.value.trim();
+    const category = document.getElementById('category').value;
     if (taskName !== '') {
+        const task = { name: taskName, category: category, completed: false };
+        tasks.push(task);
+        save();
+        if (category === getCurrentCategory()) {
+            renderTask(task);
+        }
+        input.value = '';
+    } else {
+        alert('Please enter a task!');
+    }
+}
+
+function renderTask(task) {
+    const currentCategory = getCurrentCategory();
+    if (task.category === currentCategory) {
         const listItem = document.createElement('li');
         const taskNameSpan = document.createElement('span');
-        taskNameSpan.textContent = taskName;
+        taskNameSpan.textContent = task.name;
         taskNameSpan.classList.add('task-name');
         listItem.appendChild(taskNameSpan);
 
-        //                             Checkbox
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
-        checkbox.classList.add('checkbox')
-        checkbox.addEventListener('click', function () {
+        checkbox.classList.add('checkbox');
+        checkbox.checked = task.completed;
+        checkbox.addEventListener('change', function () {
+            task.completed = checkbox.checked;
             if (checkbox.checked) {
                 listItem.classList.add('completed');
+            } else {
+                listItem.classList.remove('completed');
             }
+            save();
         });
         listItem.appendChild(checkbox);
 
-        //                              Delete
         const deleteButton = document.createElement('button');
         deleteButton.textContent = '✖';
-        deleteButton.classList.add('delete-btn')  //add class for CSS
+        deleteButton.classList.add('delete-btn');
         deleteButton.addEventListener('click', function () {
             listItem.remove();
+            tasks = tasks.filter(t => t !== task);
+            save();
         });
         listItem.appendChild(deleteButton);
 
-        //                               Edit
         const editButton = document.createElement('button');
         editButton.textContent = '🖉';
-        editButton.classList.add('edit-btn')
+        editButton.classList.add('edit-btn');
         editButton.addEventListener('click', function () {
-            const newTaskName = prompt('Edit task:', taskName);
-            if (newTaskName !== null && newTaskName !== '') {
-                listItem.querySelector('span.task-name').textContent = newTaskName;
+            const newTaskName = prompt('Edit task:', task.name);
+            if (newTaskName !== null && newTaskName.trim() !== '') {
+                taskNameSpan.textContent = newTaskName;
+                task.name = newTaskName;
+                save();
             }
         });
-
         listItem.appendChild(editButton);
 
-        document.getElementById('list').appendChild(listItem);
-        input.value = '';
-    }
-    save();
+        if (task.completed) {
+            listItem.classList.add('completed');
+        }
 
+        document.getElementById('list').appendChild(listItem);
+    }
 }
 
-document.getElementById('input').addEventListener('keypress', function (event) {
-    if (event.key === 'Enter') {
-        addTask();
-    }
-});
-
-
-/*   
-
-
-                   Save button
-
-
-const saveButton = document.createElement ('button');
- saveButton.addEventListener('click', function () => {
-
- });
-
+function getCurrentCategory() {
+    return document.getElementById('category').value;
+}
 
 function save() {
-    localStorage.setItem ('taskName', JSON.stringify(taskName))
-};
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
 
+function clearTaskList() {
+    const list = document.getElementById('list');
+    while (list.firstChild) {
+        list.removeChild(list.firstChild);
+    }
+}
 
+window.addEventListener('load', function () {
+    tasks.forEach(renderTask);
+});
 
-*/
+document.getElementById('category').addEventListener('change', function () {
+    const currentCategory = getCurrentCategory();
+    clearTaskList();
+    tasks.forEach(task => {
+        if (task.category === currentCategory) {
+            renderTask(task);
+        }
+    });
+});
 
-
-
-
+document.getElementById('save-btn').addEventListener('click', save);
