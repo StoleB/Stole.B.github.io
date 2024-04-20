@@ -11,3 +11,7 @@ function rotate(e) {
     }
     document.querySelector('.items').style.transform='rotateY('+currdeg + 'deg)';
 }
+
+function navigateTo(url) {
+    window.location.href = url;
+}

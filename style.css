@@ -51,6 +51,7 @@
     position: absolute;
     transform-style: preserve-3d;
     transition: transform 1s;
+    cursor: pointer;
 }
 
 .item {
@@ -116,11 +117,11 @@
     transition: box-shadow 0.1s, top 0.1s;
 }
 
-.next:hover, .prev:hover {
+.next:hover, .prev:hover, .items {
     color:#000
 }
 
-.next:active, .prev:active {
+.next:active, .prev:active, .items {
     background:#a3a3a3;
     box-shadow: 0 3px 10px #0008;
 }
@@ -133,6 +134,36 @@
     left: 4em;
 }
 
+@media only screen and (max-width: 430px) {
+    .container p {
+        padding-left: 20px; /* Adjust as needed */
+        font-size: 20px;
+    }
+    
+    .projects {
+        width: 30px;
+        bottom: 25%;
+        left: 100px;
+    }
+    
+    
+    .control-btn {
+        bottom: -110px;
+        left: 170%;
+    }
+
+    .items{
+        left: 40%;
+    }
+
+    .item {
+        width: 70px;
+        height: 15px;
+        line-height: 17px;
+        font-size: 10px;
+    }
+
+}
 /* For phones and small tablets */
 @media only screen and (max-width: 768px) {
     .container p {
@@ -145,6 +176,7 @@
         bottom: 35%;
         left: 10%;
     }
+    
     
     .control-btn {
         bottom: -120px; /* Adjust as needed */
