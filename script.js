@@ -1,16 +1,13 @@
-const image = [
-    'images/Quiz.png',
-    'images/To-do.png',
-    'images/Memory.png'
-];
+let currdeg=0;
+document.querySelector('.next').addEventListener('click', rotate);
+document.querySelector('.prev').addEventListener('click', rotate);
 
-let count = 0;
-function cycleImages(){
-    const imageElement = document.getElementById('image');
-    console.log(imageElement);
-    imageElement.setAttribute('src', image[count]);
-    count++;
-    if (count >= image.length) {
-        count =0;
+function rotate(e) {
+    if (e.target.className =='next') {
+        currdeg = currdeg -60;
     }
+    if (e.target.className =='prev') {
+        currdeg = currdeg +60;
+    }
+    document.querySelector('.items').style.transform='rotateY('+currdeg + 'deg)';
 }
