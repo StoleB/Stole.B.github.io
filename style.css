@@ -132,3 +132,62 @@
 .prev{
     left: 4em;
 }
+
+/* For phones and small tablets */
+@media only screen and (max-width: 768px) {
+    .container p {
+        padding-left: 20px; /* Adjust as needed */
+        font-size: 20px;
+    }
+    
+    .projects {
+        width: 80px;
+        bottom: 35%;
+        left: 10%;
+    }
+    
+    .control-btn {
+        bottom: -120px; /* Adjust as needed */
+    }
+}
+
+/* For tablets */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .container p {
+        padding-left: 50px; /* Adjust as needed */
+        font-size: 25px;
+    }
+    
+    .projects {
+        width: 90px;
+        bottom: 40%;
+        left: 15%;
+    }
+}
+
+/* For larger tablets and desktops */
+@media only screen and (min-width: 1025px) {
+    .container p {
+        padding-left: 100px; /* Keep the same as original */
+        font-size: 30px;
+    }
+    
+    .projects {
+        width: 100px;
+        bottom: 45%;
+        left: 20%;
+    }
+}
+
+/* For all devices */
+.background-image {
+    background-attachment: fixed; /* Ensure background attachment remains fixed */
+}
+
+.container {
+    padding: 20px; /* Add padding to center content */
+}
+
+.control-btn {
+    width: auto; /* Adjust width as needed */
+}
